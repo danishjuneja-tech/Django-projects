@@ -15,6 +15,9 @@ DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 # Allow hosts from environment, default to all for local/dev
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -35,6 +38,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    
 ]
 
 ROOT_URLCONF = 'june6proj.urls'
