@@ -1,20 +1,24 @@
 from pathlib import Path
 import os
-import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Security
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get(
     'SECRET_KEY',
     'django-insecure-bn3o=icg+*l8s0%g=80ziy_=78-dnl!v9jsy^&i#alw9=rs-++'  # fallback for local dev
 )
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
-# Render sets this automatically, fallback for local
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
 
-# Applications
+# Allow hosts from environment, default to all for local/dev
+ALLOWED_HOSTS = []
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -25,16 +29,17 @@ INSTALLED_APPS = [
     'june6app.apps.June6AppConfig'
 ]
 
-# Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Handles static files in production
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Added for static files in production
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    
 ]
 
 ROOT_URLCONF = 'june6proj.urls'
@@ -56,10 +61,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'june6proj.wsgi.application'
 
-# Database
+# Database (SQLite for local, PostgreSQL for production if DATABASE_URL is set)
 if os.environ.get('DATABASE_URL'):
+    import dj_database_url
     DATABASES = {
-        'default': dj_database_url.parse(os.environ['DATABASE_URL'], conn_max_age=600)
+        'default': dj_database_url.parse(os.environ['DATABASE_URL'])
     }
 else:
     DATABASES = {
@@ -86,8 +92,7 @@ USE_TZ = True
 # Static files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Added for Render
 
 # Media files
 MEDIA_URL = '/media/'
