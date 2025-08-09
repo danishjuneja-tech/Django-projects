@@ -31,7 +31,7 @@ urlpatterns = [
     path("mentor",views.mentor,name = "mentor"),
     path("courses",views.courses,name = "courses"),
     path("success",views.success,name = "success"),
-    path("show",views.show,name = "show"),
+    path("post",views.show,name = "show"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
