@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Allow hosts from environment, default to all for local/dev
 ALLOWED_HOSTS = ['*']
