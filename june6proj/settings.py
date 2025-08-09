@@ -13,7 +13,7 @@ SECRET_KEY = os.environ.get(
 DEBUG = False
 
 # Allow hosts from environment, default to all for local/dev
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
