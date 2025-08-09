@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f2f2f2;
+        }
+        .post {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .post h2 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .post p {
+            margin: 0 0 5px;
+            color: #555;
+        }
+        .post img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Usher Robotics</div>
+        <ul>
+          <li><a href="index">Home</a></li>
+          <li><a href="about">About</a></li>
+                <li><a href="contact">Contact</a></li>
+          <li><a href="/admin">Admin</a></li>
+          <li><a href="show">Show Details</a></li>\
+          <li><a href="courses">Courses</a></li>
+          <li><a href="mentor">Mentor</a></li>
+          <li><a href="follow">Follow</a></li>
+    
+    
+        </ul>
+      </nav>
+    <h1>My Blog Posts</h1>
+
+    {% for post in posts %}
+        <div class="post">
+            <h2>{{ post.name }}</h2>
+            <p>Phone: {{ post.phone }}</p>
+            <p>Email: {{ post.email }}</p>
+            <p>Description: {{ post.desc }}</p>
+            <p>Heard about us: {{ post.hear }}</p>
+
+            {% if post.sign %}
+                <img src="{{ post.sign.url }}" alt="Signature of {{ post.name }}">
+            {% else %}
+                <p>No signature uploaded.</p>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>No posts yet.</p>
+    {% endfor %}
+
+
+
+    replies got:
+    tex
+
+</body>
+</html>

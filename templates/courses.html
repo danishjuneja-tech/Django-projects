@@ -1,0 +1,161 @@
+
+<style>
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Navbar styles */
+  nav {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  nav ul li a:hover {
+    background: #555;
+  }
+  
+  /* Main content */
+  main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+  
+  main h1, main h2 {
+    color: #333;
+  }
+  
+  main p {
+    margin-bottom: 15px;
+  }
+  
+  /* Course level cards */
+  .course-level {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .course-level:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  .course-level h2 {
+    color: #007BFF;
+    margin-bottom: 10px;
+  }
+  
+  /* Social icons (if included) */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    color: #333;
+    font-size: 1.5em;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a.instagram:hover { color: #C13584; }
+  .social-icons a.facebook:hover { color: #3b5998; }
+  .social-icons a.whatsapp:hover { color: #25D366; }
+  .social-icons a.google-form:hover { color: #4285F4; }
+  
+  /* Responsive navbar (optional hamburger styles if you add a button) */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+  
+    nav ul.active {
+      display: flex;
+    }
+  
+    #hamburger {
+      display: block;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+  
+  #hamburger {
+    display: none;
+  }
+  </style>
+  
+
+
+  <main>
+    <section class="course-level">
+      <h2>Beginner Level</h2>
+      <p>A Basic Level course for kids to create stories, animations, and 2D games, learn the basics of Robotics, 3D Design & Sequencing.</p>
+    </section>
+
+    <section class="course-level">
+      <h2>Intermediate Level</h2>
+      <p>An Intermediate Level course for kids to explore the working of Sensors, enjoy building Robots, and create exciting Machine Learning projects.</p>
+    </section>
+
+    <section class="course-level">
+      <h2>Advanced Level</h2>
+      <p>An Advanced Level course where kids create OpenCV-integrated Robots, 3D Game Development, Web Designing, and Drone Programming.</p>
+    </section>
+  </main>
+
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+

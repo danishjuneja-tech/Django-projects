@@ -1,0 +1,42 @@
+
+
+
+  
+  <div class="form-section">
+    <h2>Contact Us</h2>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      
+      <input type="text" id="name" name="name" placeholder = "Enter Name" required />
+
+      
+      <input type="tel" id="phone" name="phone" placeholder = "Enter Phone Number" required />
+
+      
+      <input type="email" id="email" name="email" placeholder = "Enter Email" required />
+
+      
+      <textarea id="desc" name="desc" rows="4" placeholder = "Enter details or comments" required></textarea>
+
+      <label for="desc">Upload Digital Signatures:</label>
+      <input type="file" id="sign" name="sign"  placeholder = "Upload Digital Signatures"/>
+
+      
+      <input type="text" id="hear" name="hear" required placeholder = "How did you hear about us?"/>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+ 

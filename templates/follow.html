@@ -1,0 +1,191 @@
+<style>
+  /* Basic Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Navbar styles */
+  nav {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  nav ul li a:hover {
+    background: #555;
+  }
+  
+  /* Main content */
+  main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  main h1 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  main p {
+    margin-bottom: 15px;
+  }
+  
+  /* Social icons */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    color: #333;
+    font-size: 1.5em;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a.instagram:hover {
+    color: #C13584;
+  }
+  
+  .social-icons a.facebook:hover {
+    color: #3b5998;
+  }
+  
+  .social-icons a.whatsapp:hover {
+    color: #25D366;
+  }
+  
+  .social-icons a.google-form:hover {
+    color: #4285F4;
+  }
+  
+  /* Responsive navbar (optional hamburger styles if you add a button) */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+  
+    nav ul.active {
+      display: flex;
+    }
+  
+    nav .logo {
+      flex: 1;
+    }
+  
+    #hamburger {
+      display: block;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #fff;
+    }
+  }
+  
+  #hamburger {
+    display: none; /* Hidden by default, shown on small screens */
+  }
+  </style>
+  
+
+<nav>
+  <div class="logo">Usher Robotics</div>
+  <ul>
+    <li><a href="index">Home</a></li>
+    <li><a href="about">About</a></li>
+          <li><a href="contact">Contact</a></li>
+    <li><a href="/admin">Admin</a></li>
+    <li><a href="show">Show Details</a></li>\
+    <li><a href="courses">Courses</a></li>
+    <li><a href="mentor">Mentor</a></li>
+    <li><a href="follow">Follow</a></li>
+
+
+  </ul>
+</nav>
+
+ 
+
+  <!-- Main content -->
+  <main>
+    <h1>Follow Usher – The School of Robotics for more updates</h1>
+    <p>
+      Usher is dedicated to inspiring young minds with cutting-edge robotics, programming, and innovation skills.
+      Join our community to learn, create, and grow with expert mentorship and exciting hands-on projects.
+    </p>
+
+    <p>
+      Founded with a passion to ignite curiosity and creativity, Usher – The School of Robotics has become a hub for young learners who dream big and build bigger. We provide a nurturing environment where children explore robotics, coding, artificial intelligence, and electronics through engaging, hands-on projects.
+      <br /><br />
+      Our expert mentors guide students step-by-step, helping them transform ideas into real-world applications. From beginner-friendly courses to advanced challenges, Usher supports every learner’s journey to becoming a confident innovator.
+      <br /><br />
+      We believe technology education should be fun, inclusive, and empowering — inspiring the next generation of creators and problem-solvers.
+    </p>
+
+    <h2>Follow Us</h2>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/usherschoolofrobotics/?hl=en" target="_blank" class="instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/p/USHERschoolofrobotics-61554487168534/" target="_blank" class="facebook" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://whatsapp.com/channel/0029VaFQ2iTHVvTeSiCByc3u" target="_blank" class="whatsapp" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgs1bkEJAL4p-SbTWoPbX8Kses7tKaS7C2lFpOipwb5XVGPQ/viewform?pli=1" target="_blank" class="google-form" aria-label="Google Form">
+        <i class="fas fa-file-alt"></i>
+      </a>
+    </div>
+  </main>
+
+
+  <script>
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+
+
